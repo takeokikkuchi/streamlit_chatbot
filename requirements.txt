@@ -1,4 +1,5 @@
 streamlit
+tf-keras
 torch
 tensorflow
 transformers

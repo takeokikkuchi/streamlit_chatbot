@@ -14,6 +14,8 @@ def main():
 
     if st.button("Send"):
         # Get chatbot response
+        st.write("answer")
+        st.write(user_input)
         try:
             bot_response = chatbot(user_input)[0]['generated_text']
             st.text_area("Chatbot:", value=bot_response, height=200)

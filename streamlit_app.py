@@ -11,14 +11,17 @@ def main():
 
     # User input text box
     user_input = st.text_input("You:", "")
-    print(user_input)
+    st.write(user_input)
 
     if st.button("Send"):
+        st.write("after send")
         if user_input.strip() != "":
             # Get chatbot response
-            bot_response = chatbot(user_input)[0]['generated_text']
-            st.text_area("Chatbot:", value=bot_response, height=200)
-
+            try:
+                bot_response = chatbot(user_input)[0]['generated_text']
+                st.text_area("Chatbot:", value=bot_response, height=200)
+            except as e:
+                st.write(e)
 # Run the app
 if __name__ == "__main__":
     main()

@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 # Load the chatbot model
-chatbot = pipeline(model="facebook/blenderbot-400M-distill")
+chatbot = pipeline("conversational", model="facebook/blenderbot-400M-distill")
 
 # Define the Streamlit app
 def main():
@@ -13,14 +13,11 @@ def main():
     user_input = st.text_input("You:", "")
 
     if st.button("Send"):
-        # Get chatbot response
-        st.write("answer")
-        st.write(user_input)
-        try:
+        if user_input.strip() != "":
+            # Get chatbot response
             bot_response = chatbot(user_input)[0]['generated_text']
             st.text_area("Chatbot:", value=bot_response, height=200)
-        except Exception as e:
-            st.write(e)
+
 # Run the app
 if __name__ == "__main__":
     main()

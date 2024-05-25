@@ -13,13 +13,12 @@ def main():
     user_input = st.text_input("You:", "")
 
     if st.button("Send"):
-        if user_input.strip() != "":
-            # Get chatbot response
-            try:
-                bot_response = chatbot(user_input)[0]['generated_text']
-                st.text_area("Chatbot:", value=bot_response, height=200)
-            except Exception as e:
-                st.write(e)
+        # Get chatbot response
+        try:
+            bot_response = chatbot(user_input)[0]['generated_text']
+            st.text_area("Chatbot:", value=bot_response, height=200)
+        except Exception as e:
+            st.write(e)
 # Run the app
 if __name__ == "__main__":
     main()

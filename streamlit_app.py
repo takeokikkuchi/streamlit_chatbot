@@ -11,10 +11,8 @@ def main():
 
     # User input text box
     user_input = st.text_input("You:", "")
-    st.write(user_input)
 
     if st.button("Send"):
-        st.write("after send")
         if user_input.strip() != "":
             # Get chatbot response
             try:

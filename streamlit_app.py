@@ -20,7 +20,7 @@ def main():
             try:
                 bot_response = chatbot(user_input)[0]['generated_text']
                 st.text_area("Chatbot:", value=bot_response, height=200)
-            except as e:
+            except Exception as e:
                 st.write(e)
 # Run the app
 if __name__ == "__main__":

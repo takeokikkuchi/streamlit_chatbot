@@ -11,6 +11,7 @@ def main():
 
     # User input text box
     user_input = st.text_input("You:", "")
+    print(user_input)
 
     if st.button("Send"):
         if user_input.strip() != "":

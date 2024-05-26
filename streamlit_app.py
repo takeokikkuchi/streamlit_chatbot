@@ -10,7 +10,9 @@ def main():
     st.write("Welcome to the chatbot demo! Type your message below.")
 
     # User input text box
-    user_input = st.text_input("You:", "", live=True)
+    user_input = st.st.chat_input("You:")
+    if prompt:
+        st.write(f"User has sent the following prompt: {user_input}")
 
     # if st.button("Send"):
     #     if user_input.strip() != "":

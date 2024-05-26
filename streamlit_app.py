@@ -12,7 +12,7 @@ def main():
 
     # User input text box
     user_input = st.chat_input("You:")
-    if prompt:
+    if user_input:
         st.write(f"User has sent the following prompt: {user_input}")
 
     # if st.button("Send"):

@@ -11,18 +11,19 @@ def main():
 
     # User input text box
     user_input = st.text_input("You:", "")
+    st.write(user_input)
 
-    if st.button("Send"):
-        if user_input.strip() != "":
-            try:
-                # Create a conversation object
-                conversation = Conversation(user_input)
-                # Get chatbot response
-                bot_response = chatbot(conversation)
-                response_text = bot_response.generated_responses[0]
-                st.text_area("Chatbot:", value=response_text, height=200)
-            except Exception as e:
-                st.error(f"An error occurred: {e}")
+    # if st.button("Send"):
+    #     if user_input.strip() != "":
+    #         try:
+    #             # Create a conversation object
+    #             conversation = Conversation(user_input)
+    #             # Get chatbot response
+    #             bot_response = chatbot(conversation)
+    #             response_text = bot_response.generated_responses[0]
+    #             st.text_area("Chatbot:", value=response_text, height=200)
+    #         except Exception as e:
+    #             st.error(f"An error occurred: {e}")
 
 # Run the app
 if __name__ == "__main__":

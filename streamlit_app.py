@@ -1,8 +1,9 @@
 import streamlit as st
-from transformers import pipeline, Conversation
+from transformers import pipeline
 
 # Load the chatbot model
-chatbot = pipeline("conversational", model="facebook/blenderbot-400M-distill")
+# chatbot = pipeline("conversational", model="facebook/blenderbot-400M-distill")
+chatbot = pipeline(model="facebook/blenderbot-400M-distill")
 
 # Define the Streamlit app
 def main():

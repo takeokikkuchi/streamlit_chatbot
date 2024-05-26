@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import pipeline
 
-chatbot = pipeline(model="facebook/blenderbot-400M-distill")
+chatbot = pipeline("text-generation", model="facebook/blenderbot-400M-distill")
 prompt = st.chat_input("Say something")
 if prompt:
     st.write(f"User has sent the following prompt: {prompt}")
